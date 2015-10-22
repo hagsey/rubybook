@@ -5,3 +5,9 @@ loop do
 		break
 	end
 end
+
+puts "Keep going (Y or N)"
+x = gets.chomp
+
+while x != "Y"
+	puts ""
