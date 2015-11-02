@@ -1,4 +1,7 @@
 class MyCar
+  attr_accessor :color
+  attr_accessor :year
+
 
   def initialize(year, color, model)
     @year = year
@@ -26,6 +29,15 @@ class MyCar
   puts "Turning off the car"
   end
 
+  def color
+    puts "The color of the car is #{@color}"
+  end
+
+  def change_color(c)
+    self.color = c
+  end
+
+
 end
 
 my_car = MyCar.new("1987", "Black", "Ford Escort")
@@ -34,5 +46,7 @@ my_car.speed_up(20)
 my_car.current_speed
 my_car.slow_down(5)
 my_car.current_speed
-my_car.shut_off
-my_car.current_speed 
+my_car.color
+my_car.change_color("Red")
+my_car.color
+puts my_car.year
