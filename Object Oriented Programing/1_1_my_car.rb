@@ -1,6 +1,6 @@
 class MyCar
   attr_accessor :color
-  attr_accessor :year
+  attr_reader :year
 
 
   def initialize(year, color, model)
@@ -37,8 +37,23 @@ class MyCar
     self.color = c
   end
 
-
+  def spray_paint
+    begin
+    puts "Choose a color: (1) Red (2) Blue (3) White."
+    paint_color = gets.chomp
+    end until %(1 2 3).include?(paint_color)
+    case paint_color
+    when "1"
+      self.color = "Red"
+    when "2"
+      self.color = "Blue"
+    else
+      self.color = "White"
+    end
+    puts "You've now sprayed the car #{@color}"
+  end
 end
+
 
 my_car = MyCar.new("1987", "Black", "Ford Escort")
 my_car.current_speed
@@ -47,6 +62,4 @@ my_car.current_speed
 my_car.slow_down(5)
 my_car.current_speed
 my_car.color
-my_car.change_color("Red")
-my_car.color
-puts my_car.year
+my_car.spray_paint
